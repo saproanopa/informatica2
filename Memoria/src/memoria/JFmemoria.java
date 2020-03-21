@@ -5,6 +5,9 @@
  */
 package memoria;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 
 /**
  *
@@ -12,7 +15,7 @@ package memoria;
  */
 public class JFmemoria extends javax.swing.JFrame {
     int[] numeros=new int[16];
-    int posicion,aleatorio,contador,abiertas,poscision,posicion2,intentos;
+    int posicion,aleatorio,contador,abiertas,poscision,posicion2,intentos,juegos,aciertos;
     int cartas=1;
     int valor1=10;
     int valor2=10;
@@ -46,6 +49,29 @@ public class JFmemoria extends javax.swing.JFrame {
                     System.out.println();
 
     }
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        
+        g.setColor(Color.red);        
+        g.fillRect(0,0,600,500);
+        g.setColor(Color.black);
+        g.drawLine(200,0,200,475);        
+        g.drawLine(293,0,293,475);
+        g.drawLine(383,0,383,475);
+        g.drawLine(473,0,473,475);
+        g.drawLine(563,0,563,475);
+        
+        g.drawLine(200,145,563,145);
+        
+        g.drawLine(200,255,563,255);
+        
+        g.drawLine(200,365,563,365);
+        g.drawLine(200,475,563,475);
+                 
+       
+      
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,7 +100,13 @@ public class JFmemoria extends javax.swing.JFrame {
         btm15 = new javax.swing.JButton();
         btm16 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        lblJuegos = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         lblIntentos = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        lblAciertos = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        lblFaltantes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -88,102 +120,115 @@ public class JFmemoria extends javax.swing.JFrame {
         getContentPane().add(btnReset);
         btnReset.setBounds(10, 11, 110, 23);
 
+        btm1.setText("sin abrir");
         btm1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm1ActionPerformed(evt);
             }
         });
         getContentPane().add(btm1);
-        btm1.setBounds(200, 20, 80, 90);
+        btm1.setBounds(200, 10, 80, 100);
 
+        btm5.setText("sin abrir");
         btm5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm5ActionPerformed(evt);
             }
         });
         getContentPane().add(btm5);
-        btm5.setBounds(200, 120, 80, 90);
+        btm5.setBounds(200, 120, 80, 100);
 
+        btm9.setText("sin abrir");
         btm9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm9ActionPerformed(evt);
             }
         });
         getContentPane().add(btm9);
-        btm9.setBounds(200, 220, 80, 100);
+        btm9.setBounds(200, 230, 80, 100);
 
+        btm2.setText("sin abrir");
         btm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm2ActionPerformed(evt);
             }
         });
         getContentPane().add(btm2);
-        btm2.setBounds(290, 20, 80, 90);
+        btm2.setBounds(290, 10, 80, 100);
 
+        btm6.setText("sin abrir");
         btm6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm6ActionPerformed(evt);
             }
         });
         getContentPane().add(btm6);
-        btm6.setBounds(290, 120, 80, 90);
+        btm6.setBounds(290, 120, 80, 100);
 
+        btm10.setText("sin abrir");
         btm10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm10ActionPerformed(evt);
             }
         });
         getContentPane().add(btm10);
-        btm10.setBounds(290, 220, 80, 100);
+        btm10.setBounds(290, 230, 80, 100);
 
+        btm3.setText("sin abrir");
         btm3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm3ActionPerformed(evt);
             }
         });
         getContentPane().add(btm3);
-        btm3.setBounds(390, 20, 80, 90);
+        btm3.setBounds(380, 10, 80, 100);
 
+        btm7.setText("sin abrir");
         btm7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm7ActionPerformed(evt);
             }
         });
         getContentPane().add(btm7);
-        btm7.setBounds(390, 120, 80, 90);
+        btm7.setBounds(380, 120, 80, 100);
 
+        btm11.setText("sin abrir");
         btm11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm11ActionPerformed(evt);
             }
         });
         getContentPane().add(btm11);
-        btm11.setBounds(390, 220, 80, 100);
+        btm11.setBounds(380, 230, 80, 100);
 
+        btm4.setText("sin abrir");
         btm4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm4ActionPerformed(evt);
             }
         });
         getContentPane().add(btm4);
-        btm4.setBounds(490, 20, 80, 90);
+        btm4.setBounds(470, 10, 80, 100);
 
+        btm8.setText("sin abrir");
         btm8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm8ActionPerformed(evt);
             }
         });
         getContentPane().add(btm8);
-        btm8.setBounds(490, 120, 80, 90);
+        btm8.setBounds(470, 120, 80, 100);
 
+        btm12.setText("sin abrir");
         btm12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm12ActionPerformed(evt);
             }
         });
         getContentPane().add(btm12);
-        btm12.setBounds(490, 220, 80, 100);
+        btm12.setBounds(470, 230, 80, 100);
 
+        btm13.setText("sin abrir");
         btm13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm13ActionPerformed(evt);
@@ -192,6 +237,7 @@ public class JFmemoria extends javax.swing.JFrame {
         getContentPane().add(btm13);
         btm13.setBounds(200, 340, 80, 100);
 
+        btm14.setText("sin abrir");
         btm14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm14ActionPerformed(evt);
@@ -200,191 +246,60 @@ public class JFmemoria extends javax.swing.JFrame {
         getContentPane().add(btm14);
         btm14.setBounds(290, 340, 80, 100);
 
+        btm15.setText("sin abrir");
         btm15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm15ActionPerformed(evt);
             }
         });
         getContentPane().add(btm15);
-        btm15.setBounds(390, 340, 80, 100);
+        btm15.setBounds(380, 340, 80, 100);
 
+        btm16.setText("sin abrir");
         btm16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btm16ActionPerformed(evt);
             }
         });
         getContentPane().add(btm16);
-        btm16.setBounds(490, 340, 80, 100);
+        btm16.setBounds(470, 340, 80, 100);
 
-        jTextField1.setText("INTENTOS");
+        jTextField1.setText("#JUEGOS");
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(20, 80, 70, 30);
+        jTextField1.setBounds(0, 130, 70, 40);
+        getContentPane().add(lblJuegos);
+        lblJuegos.setBounds(10, 170, 90, 50);
+
+        jTextField2.setText("INTENTOS");
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(0, 40, 70, 40);
         getContentPane().add(lblIntentos);
-        lblIntentos.setBounds(20, 120, 90, 50);
+        lblIntentos.setBounds(10, 80, 90, 50);
+
+        jTextField3.setText("ACIERTOS");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(0, 220, 70, 40);
+        getContentPane().add(lblAciertos);
+        lblAciertos.setBounds(10, 260, 90, 50);
+
+        jTextField4.setText("FALTANTES");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(0, 310, 70, 40);
+        getContentPane().add(lblFaltantes);
+        lblFaltantes.setBounds(10, 350, 90, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm1ActionPerformed
-    
-    abiertas+=1;
-    
-   
-    
-    if (abiertas<=2)
-    {
-        intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
-        btm1.setText(String.valueOf(numeros[0]));
-        btm1.setEnabled(false);
-        if (valor1==10)
-        {
-        valor1=numeros[0];
-        posicion=1;
-        }
-        else
-        {
-            valor2=numeros[0];
-            posicion2=1;
-        }
-        
-    }
-    else 
-        
-        if (valor1!=valor2)
-        {
-            switch(posicion)
-            {
-                case 1 : btm1.setText(String.valueOf(" "));
-                         btm1.setEnabled(true);
-                break;
-                case 2 : btm2.setText(String.valueOf(" "));
-                         btm2.setEnabled(true);
-                break;
-                case 3 : btm3.setText(String.valueOf(" "));
-                         btm3.setEnabled(true);
-                break;
-                case 4 : btm4.setText(String.valueOf(" "));
-                         btm4.setEnabled(true);
-                break;
-                case 5 : btm5.setText(String.valueOf(" "));
-                         btm5.setEnabled(true);
-                break;
-                case 6 : btm6.setText(String.valueOf(" "));
-                         btm6.setEnabled(true);
-                break;
-                case 7 : btm7.setText(String.valueOf(" "));
-                         btm7.setEnabled(true);
-                break;
-                case 8 : btm8.setText(String.valueOf(" "));
-                         btm8.setEnabled(true);
-                break;
-                case 9 : btm9.setText(String.valueOf(" "));
-                         btm9.setEnabled(true);
-                break;
-                case 10 : btm10.setText(String.valueOf(" "));
-                          btm10.setEnabled(true);
-                break;
-                case 11 : btm11.setText(String.valueOf(" "));
-                          btm11.setEnabled(true);
-                break;
-                case 12 : btm12.setText(String.valueOf(" "));
-                          btm12.setEnabled(true);
-                break;
-                case 13 : btm13.setText(String.valueOf(" "));
-                          btm13.setEnabled(true);
-                break;
-                case 14 : btm14.setText(String.valueOf(" "));
-                          btm14.setEnabled(true);
-                break;
-                case 15 : btm15.setText(String.valueOf(" "));
-                          btm15.setEnabled(true);
-                break;
-                case 16 : btm16.setText(String.valueOf(" "));
-                          btm16.setEnabled(true);
-                break;
-                    
-               
-                    
-            }
-            
-            switch(posicion2)
-            {
-               case 1 : btm1.setText(String.valueOf(" "));
-                         btm1.setEnabled(true);
-                break;
-                case 2 : btm2.setText(String.valueOf(" "));
-                         btm2.setEnabled(true);
-                break;
-                case 3 : btm3.setText(String.valueOf(" "));
-                         btm3.setEnabled(true);
-                break;
-                case 4 : btm4.setText(String.valueOf(" "));
-                         btm4.setEnabled(true);
-                break;
-                case 5 : btm5.setText(String.valueOf(" "));
-                         btm5.setEnabled(true);
-                break;
-                case 6 : btm6.setText(String.valueOf(" "));
-                         btm6.setEnabled(true);
-                break;
-                case 7 : btm7.setText(String.valueOf(" "));
-                         btm7.setEnabled(true);
-                break;
-                case 8 : btm8.setText(String.valueOf(" "));
-                         btm8.setEnabled(true);
-                break;
-                case 9 : btm9.setText(String.valueOf(" "));
-                         btm9.setEnabled(true);
-                break;
-                case 10 : btm10.setText(String.valueOf(" "));
-                          btm10.setEnabled(true);
-                break;
-                case 11 : btm11.setText(String.valueOf(" "));
-                          btm11.setEnabled(true);
-                break;
-                case 12 : btm12.setText(String.valueOf(" "));
-                          btm12.setEnabled(true);
-                break;
-                case 13 : btm13.setText(String.valueOf(" "));
-                          btm13.setEnabled(true);
-                break;
-                case 14 : btm14.setText(String.valueOf(" "));
-                          btm14.setEnabled(true);
-                break;
-                case 15 : btm15.setText(String.valueOf(" "));
-                          btm15.setEnabled(true);
-                break;
-                case 16 : btm16.setText(String.valueOf(" "));
-                          btm16.setEnabled(true);
-                break;
-            }
-            
-            valor1=10;
-            valor2=10;
-            abiertas=0;
-        
-        } 
-        else if (valor1==valor2)
-        { 
-          
-           valor1=10;
-           valor2=10;
-           abiertas=0; 
-        }
-        
-       
-            
-        
-            
-        
-    
-    
-        System.out.println(valor1);
-        System.out.println(valor2);
-        
-        
-    }//GEN-LAST:event_btm1ActionPerformed
 
     private void btm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm2ActionPerformed
 
@@ -395,7 +310,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm2.setText(String.valueOf(numeros[1]));
         btm2.setEnabled(false);
         if (valor1==10)
@@ -528,10 +443,12 @@ public class JFmemoria extends javax.swing.JFrame {
         } 
         else if (valor1==valor2)
         { 
-          
+          aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -556,7 +473,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm3.setText(String.valueOf(numeros[2]));
         btm3.setEnabled(false);
         if (valor1==10)
@@ -690,9 +607,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos)); 
         }
         
        
@@ -718,7 +638,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm4.setText(String.valueOf(numeros[3]));
         btm4.setEnabled(false);
         if (valor1==10)
@@ -852,9 +772,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+          aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -879,7 +802,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     { 
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm5.setText(String.valueOf(numeros[4]));
         btm5.setEnabled(false);
         if (valor1==10)
@@ -1013,9 +936,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -1041,7 +967,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm6.setText(String.valueOf(numeros[5]));
         btm6.setEnabled(false);
         if (valor1==10)
@@ -1175,9 +1101,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+          aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos)); 
         }
         
        
@@ -1202,7 +1131,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm7.setText(String.valueOf(numeros[6]));
         btm7.setEnabled(false);
         if (valor1==10)
@@ -1336,9 +1265,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -1363,7 +1295,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm8.setText(String.valueOf(numeros[7]));
         btm8.setEnabled(false);
         if (valor1==10)
@@ -1497,9 +1429,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -1525,7 +1460,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm9.setText(String.valueOf(numeros[8]));
         btm9.setEnabled(false);
         if (valor1==10)
@@ -1659,9 +1594,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -1686,7 +1624,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm10.setText(String.valueOf(numeros[9]));
         btm10.setEnabled(false);
         if (valor1==10)
@@ -1820,9 +1758,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos)); 
         }
         
        
@@ -1847,7 +1788,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm11.setText(String.valueOf(numeros[10]));
         btm11.setEnabled(false);
         if (valor1==10)
@@ -1981,9 +1922,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -2008,7 +1952,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm12.setText(String.valueOf(numeros[11]));
         btm12.setEnabled(false);
         if (valor1==10)
@@ -2142,9 +2086,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+          aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -2169,7 +2116,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm13.setText(String.valueOf(numeros[12]));
         btm13.setEnabled(false);
         if (valor1==10)
@@ -2303,9 +2250,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+          aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -2331,7 +2281,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm14.setText(String.valueOf(numeros[13]));
         btm14.setEnabled(false);
         if (valor1==10)
@@ -2465,9 +2415,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+          aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -2491,7 +2444,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
    
         btm15.setText(String.valueOf(numeros[14]));
         btm15.setEnabled(false);
@@ -2626,9 +2579,12 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
         }
         
        
@@ -2653,7 +2609,7 @@ public class JFmemoria extends javax.swing.JFrame {
     if (abiertas<=2)
     {
         intentos+=1;
-        lblIntentos.setText(String.valueOf(intentos));
+        lblJuegos.setText(String.valueOf(intentos));
         btm16.setText(String.valueOf(numeros[15]));
         btm16.setEnabled(false);
         if (valor1==10)
@@ -2787,34 +2743,35 @@ public class JFmemoria extends javax.swing.JFrame {
         else if (valor1==valor2)
         { 
           
+           aciertos+=1;
            valor1=10;
            valor2=10;
            abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
+           
         }
         
        
             
-        
-            
-        
-    
-    
-        System.out.println(valor1);
-        System.out.println(valor2);
-        
+
   
     }//GEN-LAST:event_btm16ActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+   juegos+=1;
+   lblIntentos.setText(String.valueOf(juegos));
    posicion=0;
-   aleatorio=0;
-   
+   aleatorio=0;   
    abiertas=0;
    valor1=10;
    valor2=10;
    poscision=0;
    posicion2=0;
    intentos=0;
+   
+   lblJuegos.setText(String.valueOf(intentos));
+   
    cartas=1;
    btm1.setText(String.valueOf(" "));
    btm2.setText(String.valueOf(" "));
@@ -2832,7 +2789,22 @@ public class JFmemoria extends javax.swing.JFrame {
    btm14.setText(String.valueOf(" "));
    btm15.setText(String.valueOf(" "));
    btm16.setText(String.valueOf(" "));
-   
+   btm1.setEnabled(true);
+   btm2.setEnabled(true);
+   btm3.setEnabled(true);
+   btm4.setEnabled(true);
+   btm5.setEnabled(true);
+   btm6.setEnabled(true);
+   btm7.setEnabled(true);
+   btm8.setEnabled(true);
+   btm9.setEnabled(true);
+   btm10.setEnabled(true);
+   btm11.setEnabled(true);
+   btm12.setEnabled(true);
+   btm13.setEnabled(true);
+   btm14.setEnabled(true);
+   btm15.setEnabled(true);
+   btm16.setEnabled(true);
    while (contador <=16)
    {
        numeros[contador]=0;
@@ -2856,13 +2828,173 @@ public class JFmemoria extends javax.swing.JFrame {
             }
             
         }
-            
+      
       
                     
 
     
    
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btm1ActionPerformed
+
+        abiertas+=1;
+
+        if (abiertas<=2)
+        {
+            intentos+=1;
+            lblJuegos.setText(String.valueOf(intentos));
+            btm1.setText(String.valueOf(numeros[0]));
+            btm1.setEnabled(false);
+            if (valor1==10)
+            {
+                valor1=numeros[0];
+                posicion=1;
+            }
+            else
+            {
+                valor2=numeros[0];
+                posicion2=1;
+            }
+
+        }
+        else
+
+        if (valor1!=valor2)
+        {
+            switch(posicion)
+            {
+                case 1 : btm1.setText(String.valueOf(" "));
+                btm1.setEnabled(true);
+                break;
+                case 2 : btm2.setText(String.valueOf(" "));
+                btm2.setEnabled(true);
+                break;
+                case 3 : btm3.setText(String.valueOf(" "));
+                btm3.setEnabled(true);
+                break;
+                case 4 : btm4.setText(String.valueOf(" "));
+                btm4.setEnabled(true);
+                break;
+                case 5 : btm5.setText(String.valueOf(" "));
+                btm5.setEnabled(true);
+                break;
+                case 6 : btm6.setText(String.valueOf(" "));
+                btm6.setEnabled(true);
+                break;
+                case 7 : btm7.setText(String.valueOf(" "));
+                btm7.setEnabled(true);
+                break;
+                case 8 : btm8.setText(String.valueOf(" "));
+                btm8.setEnabled(true);
+                break;
+                case 9 : btm9.setText(String.valueOf(" "));
+                btm9.setEnabled(true);
+                break;
+                case 10 : btm10.setText(String.valueOf(" "));
+                btm10.setEnabled(true);
+                break;
+                case 11 : btm11.setText(String.valueOf(" "));
+                btm11.setEnabled(true);
+                break;
+                case 12 : btm12.setText(String.valueOf(" "));
+                btm12.setEnabled(true);
+                break;
+                case 13 : btm13.setText(String.valueOf(" "));
+                btm13.setEnabled(true);
+                break;
+                case 14 : btm14.setText(String.valueOf(" "));
+                btm14.setEnabled(true);
+                break;
+                case 15 : btm15.setText(String.valueOf(" "));
+                btm15.setEnabled(true);
+                break;
+                case 16 : btm16.setText(String.valueOf(" "));
+                btm16.setEnabled(true);
+                break;
+
+            }
+
+            switch(posicion2)
+            {
+                case 1 : btm1.setText(String.valueOf(" "));
+                btm1.setEnabled(true);
+                break;
+                case 2 : btm2.setText(String.valueOf(" "));
+                btm2.setEnabled(true);
+                break;
+                case 3 : btm3.setText(String.valueOf(" "));
+                btm3.setEnabled(true);
+                break;
+                case 4 : btm4.setText(String.valueOf(" "));
+                btm4.setEnabled(true);
+                break;
+                case 5 : btm5.setText(String.valueOf(" "));
+                btm5.setEnabled(true);
+                break;
+                case 6 : btm6.setText(String.valueOf(" "));
+                btm6.setEnabled(true);
+                break;
+                case 7 : btm7.setText(String.valueOf(" "));
+                btm7.setEnabled(true);
+                break;
+                case 8 : btm8.setText(String.valueOf(" "));
+                btm8.setEnabled(true);
+                break;
+                case 9 : btm9.setText(String.valueOf(" "));
+                btm9.setEnabled(true);
+                break;
+                case 10 : btm10.setText(String.valueOf(" "));
+                btm10.setEnabled(true);
+                break;
+                case 11 : btm11.setText(String.valueOf(" "));
+                btm11.setEnabled(true);
+                break;
+                case 12 : btm12.setText(String.valueOf(" "));
+                btm12.setEnabled(true);
+                break;
+                case 13 : btm13.setText(String.valueOf(" "));
+                btm13.setEnabled(true);
+                break;
+                case 14 : btm14.setText(String.valueOf(" "));
+                btm14.setEnabled(true);
+                break;
+                case 15 : btm15.setText(String.valueOf(" "));
+                btm15.setEnabled(true);
+                break;
+                case 16 : btm16.setText(String.valueOf(" "));
+                btm16.setEnabled(true);
+                break;
+            }
+
+            valor1=10;
+            valor2=10;
+            abiertas=0;
+
+        }
+        else if (valor1==valor2)
+        {
+
+            aciertos+=1;
+           valor1=10;
+           valor2=10;
+           abiertas=0; 
+          lblAciertos.setText(String.valueOf(aciertos));
+          lblFaltantes.setText(String.valueOf(8-aciertos));
+        }
+
+        System.out.println(valor1);
+        System.out.println(valor2);
+
+    }//GEN-LAST:event_btm1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2918,6 +3050,12 @@ public class JFmemoria extends javax.swing.JFrame {
     private javax.swing.JButton btm9;
     private javax.swing.JButton btnReset;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblAciertos;
+    private javax.swing.JLabel lblFaltantes;
     private javax.swing.JLabel lblIntentos;
+    private javax.swing.JLabel lblJuegos;
     // End of variables declaration//GEN-END:variables
 }
